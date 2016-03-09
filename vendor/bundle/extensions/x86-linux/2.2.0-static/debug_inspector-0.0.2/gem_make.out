@@ -1,0 +1,11 @@
+/home/hassan/.rbenv/versions/2.2.1/bin/ruby -r ./siteconf20160229-22129-1wi44z6.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20160229-22129-ed1b2c
