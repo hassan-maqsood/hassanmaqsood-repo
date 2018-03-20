@@ -35,4 +35,38 @@ class AuthController extends Controller {
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
+    /**
+     * get login view
+     *
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getLogin()
+    {
+        return view('auth.login');
+    }
+
+    /**
+     * get registration view.
+     *
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getRegistration()
+    {
+        return view('auth.register');
+    }
+
+    /**
+     * logout user
+     *
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->to('/');
+    }
+
 }

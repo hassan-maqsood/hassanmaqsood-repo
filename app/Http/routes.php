@@ -76,3 +76,7 @@ Route::get('/documentation', function()
 {
 	return View::make('documentation');
 });
+
+Route::get('login', 'Auth\AuthController@getLogin');
+
+Route::get('register', 'Auth\AuthController@getRegistration');

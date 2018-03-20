@@ -113,12 +113,11 @@ return [
 		/*
 		 * Laravel Framework Service Providers...
 		 */
-		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
+		//'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
-		'Illuminate\Bus\BusServiceProvider',
+		//'Illuminate\Bus\BusServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
 		'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
-		'Illuminate\Routing\ControllerServiceProvider',
 		'Illuminate\Cookie\CookieServiceProvider',
 		'Illuminate\Database\DatabaseServiceProvider',
 		'Illuminate\Encryption\EncryptionServiceProvider',
@@ -135,15 +134,20 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
+        //Illuminate\View\ViewServiceProvider::class,
+        //Illuminate\Html\HtmlServiceProvider::class,
 
 		/*
 		 * Application Service Providers...
 		 */
 		'App\Providers\AppServiceProvider',
-		'App\Providers\BusServiceProvider',
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+        'Illuminate\Broadcasting\BroadcastServiceProvider',
+         Collective\Bus\BusServiceProvider::class,
+         Intervention\Image\ImageServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class
 
 	],
 
@@ -192,7 +196,14 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+        //'HTML'      => Illuminate\Html\HtmlFacade::class,
+        //'Html'      => Illuminate\Html\HtmlFacade::class,
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
+        'Carbon'    => Carbon\Carbon::class,
+        'Image'     => Intervention\Image\Facades\Image::class,
 
-	],
+
+    ],
 
 ];
