@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url ('') }}">Project Management</a>
+                <a class="navbar-brand" href="{{ url ('') }}">SB Admin v2.0 | Laravel 5</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -30,7 +30,7 @@
                                         <em>Yesterday</em>
                                     </span>
                                 </div>
-                                <div></div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
                             </a>
                         </li>
                         <li class="divider"></li>
@@ -248,38 +248,66 @@
                             <a href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Projects</a>
+                            <a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
                             <!-- /.nav-second-level -->
                         </li>
                         <li {{ (Request::is('*tables') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('tables') }}"><i class="fa fa-table fa-fw"></i> Users</a>
+                            <a href="{{ url ('tables') }}"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
                             <a href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Projects<span class="fa arrow"></span></a>
+                        <li >
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{{ url ('list-projects') }}">List Projects</a>
+                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('panels') }}">Panels and Collapsibles</a>
                                 </li>
-                                <li>
-                                    <a href="{{ url ('create-project') }}">Create Project</a>
+                                <li {{ (Request::is('*buttons') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('buttons' ) }}">Buttons</a>
                                 </li>
-                                <li>
+                                <li {{ (Request::is('*notifications') ? 'class="active"' : '') }}>
+                                    <a href="{{ url('notifications') }}">Alerts</a>
+                                </li>
+                                <li {{ (Request::is('*typography') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('typography') }}">Typography</a>
+                                </li>
+                                <li {{ (Request::is('*icons') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('icons') }}"> Icons</a>
+                                </li>
+                                <li {{ (Request::is('*grid') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('grid') }}">Grid</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Users<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">List Users</a>
+                                    <a href="#">Second Level Item</a>
                                 </li>
                                 <li>
-                                    <a href="#">Create User</a>
+                                    <a href="#">Second Level Item</a>
                                 </li>
                                 <li>
+                                    <a href="#">Third Level <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Third Level Item</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

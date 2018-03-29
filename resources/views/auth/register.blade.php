@@ -18,7 +18,7 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="/auth/register">
+						{{Form::open(array('url' => 'auth/register','autocomplete'=>'off', 'class' => 'registration'))}}
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
@@ -56,7 +56,7 @@
 								</button>
 							</div>
 						</div>
-					</form>
+						{{ Form::close() }}
 				</div>
 			</div>
 		</div>

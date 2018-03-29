@@ -7,18 +7,22 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Login</div>
 				<div class="panel-body">
-					@if (count($errors) > 0)
+					@if (count($errors) > 0 || (Session::has('login_fail')))
 						<div class="alert alert-danger">
 							<strong>Whoops!</strong> There were some problems with your input.<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
 								@endforeach
+								<div class="form-group">
+									<span class="error-message">{{ Session::get('login_fail') }}</span>
+									<?php Session::pull('login_fail');?>
+								</div>
 							</ul>
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="/auth/login">
+					{{Form::open(array('url' => 'auth/login','autocomplete'=>'off', 'class' => 'registration'))}}
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
@@ -54,7 +58,7 @@
 								<a href="/password/email">Forgot Your Password?</a>
 							</div>
 						</div>
-					</form>
+					{{ Form::close() }}
 				</div>
 			</div>
 		</div>
