@@ -11,72 +11,84 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('home');
-});
-
-Route::get('/charts', function()
-{
-	return View::make('mcharts');
-});
-
-Route::get('/tables', function()
-{
-	return View::make('table');
-});
-
-Route::get('/forms', function()
-{
-	return View::make('form');
-});
-
-Route::get('/grid', function()
-{
-	return View::make('grid');
-});
-
-Route::get('/buttons', function()
-{
-	return View::make('buttons');
-});
+Route::get('/', 'HomeController@index');
 
 
-Route::get('/icons', function()
-{
-	return View::make('icons');
-});
+Route::get('auth/login', 'Auth\AuthController@getLogin');
 
-Route::get('/panels', function()
-{
-	return View::make('panel');
-});
+Route::get('auth/register', 'Auth\AuthController@getRegistration');
 
-Route::get('/typography', function()
-{
-	return View::make('typography');
-});
+Route::post('auth/login', 'Auth\AuthController@postLogin');
 
-Route::get('/notifications', function()
-{
-	return View::make('notifications');
-});
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('/blank', function()
-{
-	return View::make('blank');
-});
+Route::post('create-new-user-admin', 'HomeController@postCreateNewUserByAdmin');
 
-Route::get('/login', function()
-{
-	return View::make('login');
-});
+Route::get('create-admin-user', array(
+    'as' => 'create-admin-user',
+    'uses' => 'HomeController@getCreateAdminUser'
+));
 
-Route::get('/documentation', function()
-{
-	return View::make('documentation');
-});
+Route::post('create-new-project', 'HomeController@postCreateNewProject');
+Route::post('save-edit-project', 'HomeController@postEditNewProject');
+Route::post('edit-new-user', 'HomeController@postEditNewUser');
 
-Route::get('login', 'Auth\AuthController@getLogin');
+Route::get('list-projects', array(
+    'as' => 'list-projects',
+    'uses' => 'HomeController@getListProjects'
+));
 
-Route::get('register', 'Auth\AuthController@getRegistration');
+Route::get('list-admin-projects', array(
+    'as' => 'list-projects',
+    'uses' => 'HomeController@getListProjectsForAdmin'
+));
+
+Route::get('projects', array(
+    'as' => 'projects',
+    'uses' => 'HomeController@getProjects'
+));
+
+//Route::get('create-user', array(
+//    'as' => 'create-user',
+//    'uses' => 'HomeController@getCreateUser'
+//));
+
+Route::get('create-project', array(
+    'as' => 'create-project',
+    'uses' => 'HomeController@getCreateProject'
+));
+
+Route::get('list-users', array(
+    'as' => 'list-users',
+    'uses' => 'HomeController@getListUsers'
+));
+
+Route::get('logout', array(
+    'as' => 'logout',
+    'uses' => 'HomeController@getLogout'
+));
+
+Route::get('approve-request/{user_id}', array(
+    'as' => 'approve-request',
+    'uses' => 'HomeController@getApprovalRequest'
+));
+
+Route::get('reject-request/{user_id}', array(
+    'as' => 'reject-request',
+    'uses' => 'HomeController@getRejectionRequest'
+));
+
+Route::get('download-document/{pdf_link}', array(
+    'as' => 'download-document',
+    'uses' => 'HomeController@getDownloadDocument'
+));
+
+Route::get('edit-project/{project_id}', array(
+    'as' => 'edit-project',
+    'uses' => 'HomeController@getEditProject'
+));
+
+Route::get('edit-user/{user_id}', array(
+    'as' => 'edit-user',
+    'uses' => 'HomeController@getEditUser'
+));

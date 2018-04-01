@@ -1,9 +1,23 @@
-$(function() {
 
-    $('#side-menu').metisMenu();
+$(document).ready (function(){
+    window.setTimeout(function () {
+        $(".alert-danger").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    },5000);
 
+    window.setTimeout(function () {
+        $(".alert-success").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    },5000);
 });
 
+// $(function() {
+//
+//     $('#side-menu').metisMenu();
+//
+// });
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
 // Sets the min-height of #page-wrapper to window size

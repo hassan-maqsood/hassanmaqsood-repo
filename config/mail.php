@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'host' => 'smtp.mailgun.org',
+	'host' => 'smtp.gmail.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => 'test1@coeus-solutions.de', 'name' => 'noreply@projectmanagement.com'],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
 	|
 	*/
 
-	'username' => null,
+	'username' => 'test1@coeus-solutions.de',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
 	|
 	*/
 
-	'password' => null,
+	'password' => 'uraan123',
 
 	/*
 	|--------------------------------------------------------------------------

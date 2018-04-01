@@ -193,7 +193,7 @@ return [
 		'Schema'    => 'Illuminate\Support\Facades\Schema',
 		'Session'   => 'Illuminate\Support\Facades\Session',
 		'Storage'   => 'Illuminate\Support\Facades\Storage',
-		'URL'       => 'Illuminate\Support\Facades\URL',
+//		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
         //'HTML'      => Illuminate\Html\HtmlFacade::class,
@@ -202,6 +202,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Carbon'    => Carbon\Carbon::class,
         'Image'     => Intervention\Image\Facades\Image::class,
+        'URL'       => Illuminate\Support\Facades\URL::class,
 
 
     ],

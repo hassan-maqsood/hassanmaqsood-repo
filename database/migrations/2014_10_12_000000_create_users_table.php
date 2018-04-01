@@ -16,8 +16,12 @@ class CreateUsersTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name');
+			$table->string('school_name');
+			$table->text('address');
 			$table->string('email')->unique();
-			$table->string('password', 60);
+            $table->enum('status',array('pending', 'approved', 'rejected'));
+            $table->string('password', 60);
+			$table->integer('role_id');
 			$table->rememberToken();
 			$table->nullableTimestamps();
 		});

@@ -35,8 +35,12 @@
 
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
-                    <li><a href="/auth/login">Login</a></li>
-                    <li><a href="/auth/register">Register</a></li>
+                    <li>
+                        <?php echo link_to('auth/login', $title = 'Login' , $attributes = array('class'=>'btn btn-auth'), $secure = null); ?>
+                    </li>
+                    <li>
+                        <?php echo link_to('auth/register', $title = 'Register' , $attributes = array('class'=>'btn btn-auth'), $secure = null); ?>
+                    </li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
@@ -53,6 +57,9 @@
 @yield('content')
 
 <!-- Scripts -->
+<script src="{{ asset("assets/scripts/frontend.js") }}" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>

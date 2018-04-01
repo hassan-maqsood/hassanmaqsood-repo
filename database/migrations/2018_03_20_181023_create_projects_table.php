@@ -14,11 +14,14 @@ class CreateProjectsTable extends Migration {
 	{
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('name');
+            $table->string('supervisor');
+            $table->string('lead_member');
+            $table->integer('duration');
             $table->text('description');
             $table->enum('status', array('unapproved', 'approved', 'inprogress', 'inreview','published','rejected'));
-            $table->string('image');
-            $table->string('link');
+            $table->string('pdf_link');
             $table->nullableTimestamps();
         });
 	}
